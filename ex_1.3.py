@@ -1,4 +1,4 @@
-# To print Alphabet pyramid
+
 def print_pattern(x):
     length = x 
     
@@ -16,7 +16,7 @@ print_pattern(max)
 
 
 
-#To print * pattern
+
 def pyramid(n):
     if n > 0:
         pyramid(n - 1)

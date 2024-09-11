@@ -12,15 +12,21 @@ def days_in_month(month, year):
     month_days_dict = dict(month_days)
 
     if month not in month_days_dict:
-        return "Invalid month. Please enter valid month."
+        return "Invalid month. Please enter a valid month."
 
     if month == 'February' and leap(year):
         return 29
 
     return month_days_dict[month]
 
-month = input("Enter the name of the month: ")
-year = int(input("Enter the year: "))
+try:
+    month = input("Enter the name of the month: ")
+    year = int(input("Enter the year: "))
 
-days = days_in_month(month, year)
-print(f"Number of days in {month} of year {year}: {days}")
+    days = days_in_month(month, year)
+    if isinstance(days, str): 
+        print(days)
+    else:
+        print(f"Number of days in {month} of year {year}: {days}")
+except ValueError:
+    print("Invalid year. Please enter a valid integer year.")
